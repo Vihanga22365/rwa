@@ -42,35 +42,13 @@ load_dotenv()
 
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 os.environ["GOOGLE_API_KEY"] = os.getenv('GOOGLE_API_KEY')
-os.environ["GROQ_API_KEY"] = os.getenv('GROQ_API_KEY')
-os.environ["NVIDIA_API_KEY"] = os.getenv('NVIDIA_API_KEY')
-os.environ["AWS_ACCESS_KEY_ID"] = os.getenv('AWS_ACCESS_KEY_ID')
-os.environ["AWS_SECRET_ACCESS_KEY"] = os.getenv('AWS_SECRET_ACCESS_KEY')
 
 llm = ChatOpenAI(
     model="gpt-4o",
     temperature=0,
 )
 
-# llm = ChatGroq(
-#     model="openai/gpt-oss-120b",
-#     temperature=0,
-# )
-
-# llm = ChatNVIDIA(
-#     model="openai/gpt-oss-20b",
-#     temperature=0,
-#     max_completion_tokens=130000,
-# )
-
-# import boto3
-# bedrock_client = boto3.client("bedrock-runtime", region_name="us-west-2")
-
-# llm = ChatBedrockConverse(
-#     model="openai.gpt-oss-120b-1:0",
-#     temperature=0,
-#     client=bedrock_client
-# )
+# 
 
 gemini_2_5_flash = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
